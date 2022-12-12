@@ -63,7 +63,7 @@ services:
       - esmaster1:/usr/share/elasticsearch/data
     deploy:
       placement:
-        constraints: [node.labels.master1 == true]
+        constraints: [ node.hostname == cs-soc-swarm-me01 ]
       endpoint_mode: dnsrr
       mode: "replicated"
       replicas: 1
@@ -89,7 +89,7 @@ services:
       - esmaster2:/usr/share/elasticsearch/data
     deploy:
       placement:
-        constraints: [node.labels.master2 ==  true]
+        constraints: [ node.hostname == cs-soc-swarm-me02 ]
       endpoint_mode: dnsrr
       mode: "replicated"
       replicas: 1
@@ -115,7 +115,7 @@ services:
       - esmaster3:/usr/share/elasticsearch/data
     deploy:
       placement:
-        constraints: [node.labels.master3 ==  true]
+        constraints: [ node.hostname == cs-soc-swarm-me03 ]
       mode: "replicated"
       replicas: 1
       resources:
@@ -141,7 +141,7 @@ services:
       - esdata1:/usr/share/elasticsearch/data
     deploy:
       placement:
-        constraints: [node.labels.data1 ==  true]
+        constraints: [ node.hostname == cs-soc-swarm-de01 ]
       endpoint_mode: dnsrr
       mode: "replicated"
       replicas: 1
@@ -167,7 +167,7 @@ services:
       - esdata2:/usr/share/elasticsearch/data
     deploy:
       placement:
-        constraints: [node.labels.data2 == true]
+        constraints: [ node.hostname == cs-soc-swarm-de02 ]
       endpoint_mode: dnsrr
       mode: "replicated"
       replicas: 1
@@ -187,7 +187,7 @@ services:
       - esdata3:/usr/share/elasticsearch/data
     deploy:
       placement:
-        constraints: [node.labels.data3 == true]
+        constraints: [ node.hostname == cs-soc-swarm-de03 ]
       endpoint_mode: dnsrr
       mode: "replicated"
       replicas: 1
